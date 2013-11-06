@@ -1,0 +1,79 @@
+﻿<form name="form" class="form-horizontal" role="form">
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-8">
+            <h2>{{product.productName}}</h2>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-lg-2 control-label">ProductID</label>
+        <div class="col-lg-8">
+            <input type="text" class="form-control" ng-model="product.productID" ng-disabled="true">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-lg-2 control-label">ProductName</label>
+        <div class="col-lg-8">
+            <input type="text" class="form-control" ng-model="product.productName">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-lg-2 control-label">Supplier</label>
+        <div class="col-lg-8">
+            <select class="form-control" ng-model="product.supplierID">
+                <option ng-repeat="s in suppliers" value="{{s.supplierID}}">{{s.companyName}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-lg-2 control-label">Category</label>
+        <div class="col-lg-8">
+            <select class="form-control" ng-model="product.categoryID">
+                <option ng-repeat="c in categories" value="{{c.categoryID}}">{{c.description}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-lg-2 control-label">QuantityPerUnit</label>
+        <div class="col-lg-8">
+            <input type="text" class="form-control" ng-model="product.quantityPerUnit">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-lg-2 control-label">UnitPrice</label>
+        <div class="col-lg-8">
+            <input type="text" class="form-control" ng-model="product.unitPrice">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-lg-2 control-label">UnitsInStock</label>
+        <div class="col-lg-8">
+            <input type="text" class="form-control" ng-model="product.unitsInStock">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-lg-2 control-label">UnitsOnOrder</label>
+        <div class="col-lg-8">
+            <input type="text" class="form-control" ng-model="product.unitsOnOrder">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-lg-2 control-label">ReorderLevel</label>
+        <div class="col-lg-8">
+            <input type="text" class="form-control" ng-model="product.reorderLevel">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-8">
+            <label><input type="checkbox" ng-model="product.discontinued"> Discontinued</label>
+            
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-8">
+            <button ng-click="save()" ng-disabled="form.$pristine" class="btn btn-primary">Save</button>
+            <button ng-click="cancel()" class="btn btn-warning">Cancel</button>
+        </div>
+    </div>
+
+</form>
