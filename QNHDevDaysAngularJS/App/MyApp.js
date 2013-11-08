@@ -56,7 +56,7 @@
             id: '@productId'
         }, {
             save: {
-                method: "PUT", params: { id: '@productID' }
+                method: "PUT", params: { id: '@productId' }
             }
         });
     }]);

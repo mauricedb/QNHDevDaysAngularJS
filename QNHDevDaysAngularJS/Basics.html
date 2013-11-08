@@ -1,9 +1,45 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Basics</title>
+    <title>AngularJS Basics</title>
 </head>
-<body>
+<body ng-app ng-controller="PersonCtrl" >
+    {{1+1}}
 
+    {{model.firstName}} {{model.lastName}}
+    <br />
+    {{model.fullName()}}
+    <br />
+    <input type="text" ng-model="model.firstName"/>
+    <input type="text" ng-model="model.lastName"/>
+    <br />
+    <input type="text" ng-model="model.firstName" />
+    <input type="text" ng-model="model.lastName" />
+
+
+
+    <script src="Scripts/angular.js"></script>
+
+    <script>
+
+
+
+        function PersonCtrl($scope) {
+            var model = {
+                firstName: 'Maurice',
+                lastName: 'de Beijer'
+            };
+
+            $scope.model = model;
+
+            $scope.model.fullName = function() {
+                return model.firstName + model.lastName;
+            };
+
+        }
+
+    </script>
 </body>
+
 </html>
+
